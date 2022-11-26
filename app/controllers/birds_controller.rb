@@ -48,7 +48,7 @@ class BirdsController < ApplicationController
     render json: { error: "Bird not found" }, status: :not_found
   end
 
-  def render_unprocessable_entity_response
+  def render_unprocessable_entity_response(invalid)
     render json: { errors: invalid.record.full_messages }, status: :unprocessable_entity
   end
 
